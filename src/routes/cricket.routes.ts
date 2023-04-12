@@ -1,6 +1,7 @@
 import { Request, Response, Router } from "express";
 import { CriketMatch } from "../services/cricBuzz.v2.service";
 import { MatchOccurrence } from "../types";
+import loginRequired from "../middleware/auth";
 
 const iplRouter = Router();
 
