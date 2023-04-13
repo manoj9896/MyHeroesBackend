@@ -1,6 +1,7 @@
 import * as jwt from 'jsonwebtoken';
 import { JwtPayload } from 'jsonwebtoken';
-import { SECRET } from '../config';
+
+const SECRET = process.env.SECRET;
 
 export default function loginRequired(req, res, next) {
     const authHeader = req.headers.authorization
@@ -8,7 +9,7 @@ export default function loginRequired(req, res, next) {
     if (token == null) return res.sendStatus(401);
     try {
         const user: JwtPayload | String = jwt.verify(token, SECRET);
-        req['user'] = user;
+        req['user'] = user['id'];
     } catch (e) {
         return res.sendStatus(403);
     }
