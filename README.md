@@ -14,6 +14,7 @@ yarn start
 ## Add a .env at your root level
 
 ```
+SECRET=thisisasecret
 PORT=8080
 ```
 
