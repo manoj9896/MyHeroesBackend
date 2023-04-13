@@ -4,6 +4,7 @@ import morgan from "morgan";
 import dotenv from "dotenv";
 dotenv.config({ path: ".env" });
 import baseRouter from "./routes/routes";
+import './config/firestore.config'
 
 const app = express();
 const port = process.env.PORT;
